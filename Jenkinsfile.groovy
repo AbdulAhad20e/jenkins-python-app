@@ -9,8 +9,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'master', 
-                url: 'https://github.com/kriru/firstJava.git',
-                credentialsId: ''  // Remove this line if no credentials needed
+                url: 'https://github.com/kriru/firstJava.git'
             }
         }
         
@@ -27,7 +26,6 @@ pipeline {
             
             post {
                 always {
-                    // This will always run, even if static analysis fails
                     echo 'Static analysis completed'
                 }
             }
